@@ -1,0 +1,39 @@
+class Solution {
+    public int[] plusOne(int[] digits) {
+        for(int i=digits.length-1;i>=0;i--)
+        {
+         if(digits[i]<9)
+         {
+          digits[i]++;
+          return digits;
+        }
+        digits[i]=0;
+        }
+        digits=new int [digits.length+1];
+        digits[0]=1;
+        return digits;
+     /*int  v=0;
+        for(int i=0;i<digits.length;i++)
+        {
+          v=v*10+digits[i];
+        }
+        System.out.println(v);
+        int len;
+        if(digits[digits.length-1]==9 && digits.length%2==1)
+            len= digits.length+1;
+        else if(v%9==0&& v!=0)
+              len=digits.length+1;
+        else
+             len=digits.length;
+        int n=v+1;
+        int a[]=new int[len];
+        int i=len-1;
+        while(n!=0)
+        {
+            a[i]=n%10;
+            n/=10;
+             i--;
+        }
+        return a;*/
+    }
+}
