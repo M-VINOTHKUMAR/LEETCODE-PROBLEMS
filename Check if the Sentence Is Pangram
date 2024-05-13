@@ -1,0 +1,15 @@
+class Solution {
+    public boolean checkIfPangram(String sentence) {
+        ArrayList<Character> l=new ArrayList<>();
+        for(int i=0;i<sentence.length();i++)
+        {
+            l.add(sentence.charAt(i));
+        }
+      for(int i=97;i<123;i++)
+      {
+        if(!l.contains((char)i))
+             return false;
+      }  
+      return true;
+    }
+}
