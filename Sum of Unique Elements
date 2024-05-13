@@ -1,0 +1,25 @@
+class Solution {
+    public int sumOfUnique(int[] nums) {
+        HashMap<Integer,Integer> m=new HashMap<>();
+        for(int i=0;i<nums.length;i++)
+        {
+            if(!m.containsKey(nums[i]))
+            {
+                m.put(nums[i],1);
+            }
+            else
+            {
+                int g=m.get(nums[i]);
+                m.replace(nums[i],++g);
+            }
+        }
+        System.out.println(m);
+        int s=0;
+        for(Map.Entry<Integer,Integer> k: m.entrySet())
+        {
+          if(k.getValue()==1)
+             s+=k.getKey();
+        }
+        return s;
+    }
+}
