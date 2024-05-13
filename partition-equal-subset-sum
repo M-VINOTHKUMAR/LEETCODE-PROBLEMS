@@ -1,0 +1,78 @@
+class Solution {
+    public boolean canPartition(int[] nums) {
+        int sum=0;
+        for(int i=0;i<nums.length;i++)
+        {
+            sum+=nums[i];
+        }
+         // sum=sum/2;
+        if(sum%2==1)
+        {
+            return false;
+        }
+      
+        else
+        {
+            int dp[][]=new int[nums.length+1][sum+1];
+         for(int i=0;i<=nums.length;i++)
+         {
+            for(int j=0;j<=sum;j++)
+            {
+            dp[i][j]=-1;
+            }
+         }
+         sum=sum/2;
+        boolean t= par(nums,nums.length,sum,dp);
+        return t;
+        }
+
+    }
+
+    boolean par(int a[],int n, int sum,int dp[][])
+    {
+        if(sum==0)
+        {
+            return true;
+        }
+        if(n==0)
+           return false;
+        if(dp[n][sum]!=-1)
+        {
+            if(dp[n][sum]==1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        if(a[n-1]>sum )
+        {
+            boolean ans= par(a,n-1,sum,dp);
+             if(ans==false)
+            {
+                dp[n][sum]=0;
+            }
+            else
+            {
+                dp[n][sum]=1;
+            }
+            return ans;
+        }
+    
+        else{
+            boolean p=par(a,n-1,sum-a[n-1],dp);
+            boolean np=par(a,n-1,sum,dp);
+            if((p||np)==false)
+            {
+                dp[n][sum]=0;
+            }
+            else
+            {
+                dp[n][sum]=1;
+            }
+            return p||np;
+        }
+    }
+}
