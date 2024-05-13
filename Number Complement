@@ -1,0 +1,14 @@
+class Solution {
+    public int findComplement(int num) {
+        if(num==1 || num==0)  return (num==0)?1:0;
+        int ans=0;
+        int f=1;
+        while(num!=0)
+        {
+            ans+=f*((num%2==0)?1:0);
+            f*=2;
+            num/=2;
+        }
+        return ans;
+    }
+}
