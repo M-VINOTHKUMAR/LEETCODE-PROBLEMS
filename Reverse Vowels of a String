@@ -1,0 +1,32 @@
+class Solution {
+    public String reverseVowels(String s) {
+        char c[]=s.toCharArray();
+       // System.out.print(c);
+       StringBuffer x= new StringBuffer();
+       for(int i=0;i<c.length;i++)
+       {
+        if('a'==c[i] || 'e'==c[i] || 'i'==c[i] || 'o'==c[i] || 'u'==c[i] ||
+        'A'==c[i] || 'E'==c[i] || 'I'==c[i] || 'O'==c[i] || 'U'==c[i]  )
+        {
+            x.append(c[i]);
+            c[i]='+';
+        }
+       }
+       int n=x.length()-1;
+        for(int i=0;i<c.length;i++)
+       {
+        if(c[i]=='+')
+        {
+            c[i]=x.charAt(n);
+            n--;
+        }
+    }
+    String y="";
+     for(int i=0;i<c.length;i++)
+       {
+        y+=(c[i]);
+    }
+   
+    return y;
+}
+}
