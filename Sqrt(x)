@@ -1,0 +1,25 @@
+import java.util.*;
+class Solution {
+    public int mySqrt(int x) {
+        long s=1;
+        long e=x;
+        while(s<=e)
+        {
+            long mid=s+(e-s)/2;
+            if(mid*mid==x)
+            {
+                return (int)mid;
+            }
+            else if(x<mid*mid)
+            {
+                e=mid-1;
+            }
+            else if(x>mid*mid)
+            {
+                s=mid+1;
+            }
+
+        }
+        return (int)e;
+    }
+}
