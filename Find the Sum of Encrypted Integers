@@ -1,0 +1,21 @@
+class Solution {
+    public int sumOfEncryptedInt(int[] nums) {
+        int n=nums.length;
+        int s=0;
+        for(int i=0;i<n;i++)
+        {
+            int m=Integer.MIN_VALUE;
+            int v=1;
+            int N=nums[i];
+            while(N!=0)
+            {
+                int rem=N%10;
+                m=(rem >m)?rem:m;
+                v=v*10+1;
+                N/=10;
+            }
+            s+=m*(v/10);
+        }
+        return s;
+    }
+}
