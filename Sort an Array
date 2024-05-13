@@ -1,0 +1,46 @@
+class Solution {
+    void ms(int nums[],int s,int m,int e)
+    {
+        int s1=m-s+1;
+        int s2=e-m;
+        int l[]=new int[s1];
+        int r[]=new int[s2];
+        for(int i=0;i<s1;i++)
+           l[i]=nums[s+i];
+         for(int i=0;i<s2;i++)
+           r[i]=nums[m+1+i];
+           int i=0,j=0,k=s;
+        while(i<s1 && j<s2)
+        {
+            if(l[i]<r[j])
+                nums[k++]=l[i++];
+            else
+               nums[k++]=r[j++];
+        } 
+        while(i<s1 )
+    
+          
+                nums[k++]=l[i++];
+           
+        while(i<s1 && j<s2)
+       
+               nums[k++]=r[j++];
+    
+    
+    }
+
+    void m(int nums[],int s,int e)
+    {
+        if(s<e)
+        {
+            int mid=s+(e-s)/2;
+            m(nums,s,mid);
+            m(nums,mid+1,e);
+            ms(nums,s,mid,e);
+        }
+    }
+    public int[] sortArray(int[] nums) {
+        m(nums,0,nums.length-1);
+        return nums;
+    }
+}
