@@ -1,0 +1,27 @@
+class Solution {
+    public boolean detectCapitalUse(String s) {
+        int n=s.length();
+        int g=0;
+        if(s.charAt(n-1)<='Z') // capital
+           g=1;
+        else
+           g=2;
+           if(g==1)
+           {
+              for(int i=n-2;i>=0;i--)
+        {
+             if(s.charAt(i)>'Z')
+              return false;
+        }
+           }
+           else
+           {
+              for(int i=n-2;i>=1;i--)
+        {
+             if(s.charAt(i)<='Z')
+             return false;
+        }
+           }
+        return true;
+    }
+}
