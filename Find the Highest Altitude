@@ -1,0 +1,14 @@
+class Solution {
+    public int largestAltitude(int[] gain) {
+        int a=0;
+        int ha=0;
+        for(int i=0;i<gain.length;i++)
+        {
+            a+=gain[i];
+            if(ha<a)
+              ha=a;
+        }
+        
+        return ha;
+    }
+}
