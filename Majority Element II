@@ -1,0 +1,25 @@
+class Solution {
+    public List<Integer> majorityElement( int[] nums) {
+        ArrayList<Integer> l=new ArrayList<>();
+       HashMap<Integer,Integer> m=new HashMap<>();
+        int n=nums.length;
+        int c=n/3;
+        for(int i=0;i<n;i++)
+        {
+            if(!m.containsKey(nums[i]))
+                   m.put(nums[i],1);
+            else
+            {
+                int f=m.get(nums[i]);
+                 m.replace(nums[i],++f);
+            }
+        }
+        System.out.println(m+ " "+c);
+        for(Map.Entry<Integer,Integer> k: m.entrySet())
+        {
+            if(k.getValue()>c)
+            l.add(k.getKey());
+        }
+        return l;
+    }
+}
