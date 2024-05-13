@@ -1,0 +1,16 @@
+class Solution {
+    public boolean stoneGame(int[] piles) {
+        int n=piles.length-1;
+        int sum1=0;
+        int sum2=0;
+        for(int i=0;i<=n;i++)
+        {
+            sum1+=piles[i];
+            sum2+=piles[n--];
+        }
+        if(sum1<sum2 || sum2<sum1)
+           return true;
+        else 
+        return false;
+    }
+}
