@@ -1,0 +1,17 @@
+class Solution {
+    public int maxOperations(int[] nums) {
+        int sum=nums[0]+nums[1];
+        int o=1;
+        for(int i=2;i<nums.length-1;i++)
+        {
+            if(sum==nums[i]+nums[i+1])
+            {
+               o++;
+               i++;
+            }
+            else 
+                break;
+        }
+        return o;
+    }
+}
