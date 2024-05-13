@@ -1,0 +1,17 @@
+class Solution {
+    public List<Integer> findDuplicates(int[] nums) {
+        Arrays.sort(nums);
+        ArrayList<Integer> l=new ArrayList<>();
+        int n=nums.length;
+        for(int i=0;i<n-1;i++)
+        {
+            int le=l.size();
+            if(le!=0 && l.get(le-1)==nums[i])
+                 continue;
+            if(nums[i]==nums[i+1])
+              l.add(nums[i]);
+        }
+        //System.out.print(l);
+        return l; 
+    }
+}
