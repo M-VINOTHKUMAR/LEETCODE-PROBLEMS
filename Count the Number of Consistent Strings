@@ -1,0 +1,40 @@
+class Solution {
+    public int countConsistentStrings(String allowed, String[] words) {
+        int co=0;
+        ArrayList<Character> l1=new ArrayList<>();
+         ArrayList<Character> l2=new ArrayList<>();
+         for(char c:allowed.toCharArray())
+         {
+            l1.add(c);
+         }
+          System.out.println(l1);
+        // int n=l1.size();
+         int f=1;
+         for(int i=0;i<words.length;i++)
+         {
+             for(char c:words[i].toCharArray())
+         {
+            l2.add(c);
+         }
+         System.out.println(l2);
+         for(int j=0;j<l2.size();j++)
+         {
+            if(!l1.contains(l2.get(j)))
+            {
+                f=2;
+                break;
+            }
+         }
+               l2.clear();
+         if(f==2)
+         {
+             f=1;
+           continue;
+         }
+        else
+           co++;
+  
+         }
+         return co;
+    }
+}
