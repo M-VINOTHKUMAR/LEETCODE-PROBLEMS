@@ -1,0 +1,28 @@
+class Solution {
+    public int rob(int[] nums) {
+        int n=nums.length;
+        int dp[]=new int[n+1];
+        Arrays.fill(dp,-1);
+         int ans= helper( nums,n,dp);
+         return ans;
+
+}
+         int helper(int []a ,int n,int dp[])
+      {
+       
+        if(n<=0)
+        {
+            return 0;
+        }
+         if(dp[n]!=-1)
+        {
+            return dp[n];
+        }
+        int pick=a[n-1]+helper(a,n-2,dp);
+        int nonpick=0+helper(a,n-1,dp);
+      
+      dp[n]=Math.max(pick,nonpick);
+      return dp[n];
+      }
+    
+}
