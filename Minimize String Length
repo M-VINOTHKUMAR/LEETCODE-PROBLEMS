@@ -1,0 +1,11 @@
+class Solution {
+    public int minimizedStringLength(String s) {
+       ArrayList<Character> l=new ArrayList<>();
+       for(int i=0;i<s.length();i++)
+       {
+        if(!l.contains(s.charAt(i)))
+           l.add(s.charAt(i));
+       } 
+       return l.size();
+    }
+}
