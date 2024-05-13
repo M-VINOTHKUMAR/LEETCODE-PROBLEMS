@@ -1,0 +1,41 @@
+class Solution {
+      int  bs(int t,int s,int e,int numbers[],int i)
+      {
+        while(s<=e)
+        {
+        int m=(s+e)/2;
+        if( numbers[m]==t)
+        {
+            if(i==m)
+              return m+1;
+          return m;
+        }
+        else if(numbers[m]<t)
+        {
+            s=m+1;
+        }
+        else if(numbers[m]>t)
+        {
+            e=m-1;
+        }
+        }
+        return -1;
+      }
+    public int[] twoSum(int[] numbers, int target) {
+        int n=numbers.length;
+        int a[]=new int[2];
+        for(int i=0;i<n;i++)
+        {
+            int v=(target-numbers[i]);
+           int ans= bs(v,0,n-1,numbers,i);
+           if(ans!=-1)
+           {
+            a[0]=i+1;
+            a[1]=ans+1;
+            break;
+           }
+        }
+       
+        return a;
+    }
+}
