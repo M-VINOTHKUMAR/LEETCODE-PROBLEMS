@@ -1,0 +1,20 @@
+class Solution {
+    public int countDigits(int num) {
+        int rem;
+        int n=num;
+       int h=0;
+         while(num!=0)
+        { 
+            rem=num%10;
+            if(n%rem==0)
+            {
+                 System.out.print(rem);
+                   h++;
+            }
+            num/=10;
+        }
+       
+     return h;
+ 
+    }
+}
