@@ -1,0 +1,26 @@
+class Solution {
+   boolean bs(int []a,int s,int e,int t)
+    {
+        while(s<=e)
+        {
+            int m=(s+e)/2;
+            if(a[m]==t)
+            {
+                return true;
+            }
+            else if(a[m]<t)
+            s=m+1;
+            else
+            e=m-1;
+        }
+        return false;
+    }
+    public boolean searchMatrix(int[][] matrix, int target) {
+        for(int i=0;i<matrix.length;i++)
+        {
+            if(bs(matrix[i],0,matrix[i].length-1,target))
+            return true;
+        }
+        return false;
+    }
+}
