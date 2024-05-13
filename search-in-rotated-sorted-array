@@ -1,0 +1,38 @@
+class Solution {
+     static int bsrh(int target,int nums[],int s, int e)
+        {
+            if(s>e)
+                return -1;
+            int mid=(s+e)/2;
+            if(nums[mid]==target)
+            {
+                return mid;
+            }
+            if(nums[s]<=nums[mid])
+            {
+            if(nums[s]<=target && nums[mid]>=target)
+            {
+              return bsrh(target , nums,s,e=mid-1 );
+            
+            } return bsrh(target , nums,s=mid+1,e );
+            }
+
+            
+            if(nums[mid]<=target && nums[e]>=target)
+            {
+                return  bsrh(target , nums,s=mid+1,e );
+               
+            }
+            return  bsrh(target , nums,s,e=mid-1 );
+            
+          
+        }
+
+    public int search(int[] nums, int target) {
+        int s=0,e=nums.length-1;
+        if(nums.length==1 && nums[0]==target)return 0;
+        if(nums.length==1 && nums[0]!=target)return -1;
+        int in=  bsrh(target , nums,s,e );
+        return in;
+    }
+}
