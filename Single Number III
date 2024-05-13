@@ -1,0 +1,30 @@
+class Solution {
+    public int[] singleNumber(int[] nums) {
+      HashMap<Integer,Integer> m=new HashMap<>();
+      for(int i=0;i<nums.length;i++)
+      {
+        if(!m.containsKey(nums[i]))
+            m.put(nums[i],1);
+        else
+        {
+            int d=m.get(nums[i]);
+            m.replace(nums[i],++d);
+        }
+      }
+      int n=0;
+      for(Map.Entry<Integer,Integer> k: m.entrySet())
+     {
+        if(k.getValue()==1)
+          n++;
+     }
+      
+        int a[]=new int[n];
+        int i=0;
+     for(Map.Entry<Integer,Integer> k: m.entrySet())
+     {
+        if(k.getValue()==1)
+          a[i++]=k.getKey();
+     }
+     return a;
+    }
+}
