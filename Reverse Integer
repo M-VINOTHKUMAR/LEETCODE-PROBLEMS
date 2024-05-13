@@ -1,0 +1,15 @@
+class Solution {
+    public int reverse(int x) {
+         
+        double rem,sum=0;
+        int t=x;
+        while(x!=0)
+        {
+           rem=x%10;
+           sum=sum*10+rem;
+           x/=10;
+        }if(sum<=Integer.MIN_VALUE || sum>=Integer.MAX_VALUE-1)
+                   return 0;
+         return (int)sum;
+    }
+}
