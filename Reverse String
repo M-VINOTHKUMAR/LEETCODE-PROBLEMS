@@ -1,0 +1,20 @@
+class Solution {
+    public void reverseString(char[] s) {
+        char []v=new char[s.length];
+
+        int i=s.length-1;
+        int j=0;
+        while(j!=s.length)
+        {
+            v[j]=s[i];
+            i--;
+            j++;
+        }
+        i=0;
+        for(char c:v)
+        {
+            s[i]=c;
+            i++;
+        }
+    }
+}
