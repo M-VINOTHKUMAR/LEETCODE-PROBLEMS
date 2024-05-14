@@ -1,0 +1,24 @@
+class Solution {
+    public boolean areOccurrencesEqual(String s) {
+        HashMap<Character,Integer> m=new HashMap<>();
+        for(int i=0;i<s.length();i++)
+        {
+            if(!m.containsKey(s.charAt(i)))
+                m.put(s.charAt(i),1);
+            else
+            {
+                int b=m.get(s.charAt(i));
+                b++;
+                m.replace(s.charAt(i),b);
+            }
+        }
+        System.out.print(m);
+        int v=m.get(s.charAt(0));
+        for(Map.Entry<Character,Integer> k:m.entrySet())
+         {
+            if(v!=k.getValue())
+              return false;
+         }
+        return true;
+    }
+}
