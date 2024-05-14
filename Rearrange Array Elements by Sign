@@ -1,0 +1,32 @@
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+        int n=nums.length;
+        int a[]=new int [n];
+        int i,j=0,z=0;
+        int b[]=new int [n];
+         Arrays.fill(a,Integer.MIN_VALUE);
+         Arrays.fill(b,Integer.MIN_VALUE);
+        for( i=0;i<n;i++)
+        {
+            if(nums[i]>=0)
+            a[j++]=nums[i];
+            else
+            b[z++]=nums[i]; 
+        }
+         i=0;
+        j=0;
+        z=0;
+        while(a[i]!=Integer.MIN_VALUE || b[j]!=Integer.MIN_VALUE)
+        {
+            if(a[i]!=Integer.MIN_VALUE)
+            {
+                nums[z++]=a[i++];
+            }
+             if(b[j]!=Integer.MIN_VALUE)
+            {
+                nums[z++]=b[j++];
+            }
+        }
+        return nums;
+    }
+}
