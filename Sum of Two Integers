@@ -1,4 +1,4 @@
-class Solution {
+class solution {
     int sum=0;
   void f(int a,int b)
     {
