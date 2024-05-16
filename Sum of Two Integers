@@ -1,0 +1,25 @@
+class Solution {
+    int sum=0;
+  void f(int a,int b)
+    {
+        if(b==0)
+            return ;
+              
+        if(b>0)
+        {
+            sum++;
+           f(a,--b);
+        }
+        else
+        {
+            sum--;
+           f(a,++b);
+        }
+    }
+    public int getSum(int a, int b) {
+        sum=a;
+        f(a,b);
+        return sum;
+        
+    }
+}
