@@ -1,0 +1,25 @@
+class Solution {
+    public int findSpecialInteger(int[] arr) {
+        HashMap<Integer,Integer> m=new HashMap<>();
+        for(int i=0;i<arr.length;i++)
+        {
+            if(!m.containsKey(arr[i]))
+               m.put(arr[i],1);
+               else
+               {
+                int b=m.get(arr[i])+1;
+                 m.replace(arr[i],b);
+                }
+        }
+        //System.out.println(m);
+        int n=arr.length;
+        n/=4;
+        for(Map.Entry <Integer,Integer>  k : m.entrySet())
+        {
+            if(k.getValue() >n)
+              return k.getKey();
+        }
+
+       return -1;
+    }
+}
