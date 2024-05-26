@@ -1,0 +1,18 @@
+class Solution {
+    public boolean halvesAreAlike(String s) {
+        int i=0,j=s.length()-1;
+        int c=0,d=0;
+        List<Character> l=Collections.EMPTY_LIST;
+        Collections.addAll(l=new ArrayList(),'a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+        while(i<j)
+        {
+           if(l.contains(s.charAt(i)))
+               c++;
+           if(l.contains(s.charAt(j)))
+               d++;
+           i++;j--;
+        }
+    
+         return (c==d)?true:false;
+    }
+}
