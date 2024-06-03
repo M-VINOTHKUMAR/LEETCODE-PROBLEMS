@@ -1,0 +1,22 @@
+class Solution {
+    public int diagonalSum(int[][] mat) {
+        int a=0,b=mat.length-1,c=0;
+        for(int i=0;i<mat.length;i++)
+        {
+            for(int j=0;j<mat[0].length;j++)
+            {
+                if(i==j || (a==i && b==j))
+                {
+                    c+=mat[i][j];
+                     if(a==i && b==j)
+                     {
+                        a++;
+                        b--;
+                     }
+
+                }
+            }
+        }
+        return c;
+    }
+}
