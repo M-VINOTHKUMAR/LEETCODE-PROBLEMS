@@ -1,0 +1,21 @@
+class Solution {
+    public int countElements(int[] nums) {
+        ArrayList<Integer> l=new ArrayList<>();
+        int s=Integer.MAX_VALUE;
+        int m=Integer.MIN_VALUE;
+        for(int i=0;i<nums.length;i++)
+        {
+            if(s>nums[i])
+               s=nums[i];
+            if(m<nums[i])
+                m=nums[i];
+        }
+        for(int i=0;i<nums.length;i++)
+        {
+            if(nums[i]!=s && nums[i]!=m)
+               l.add(nums[i]);
+        }
+       // System.out.print(l);
+        return l.size();
+    }
+}
