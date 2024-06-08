@@ -1,0 +1,47 @@
+class Solution {
+    public String[] uncommonFromSentences(String s1, String s2) {
+       String c1[]=s1.split(" ");
+       String c2[]=s2.split(" ");
+    ArrayList<String> s=new ArrayList<>();
+    ArrayList<String> p=new ArrayList<>();
+    int i=0,j=0;
+     while(i!=c1.length || j!=c2.length)
+     {
+        if(i!=c1.length)
+        {
+            if(!s.contains(c1[i]))
+            {
+                s.add(c1[i]);
+            }
+            else
+            {
+                if(!p.contains(c1[i]))
+                   p.add(c1[i]);
+            }
+            i++;
+        }
+         if(j!=c2.length)
+        {
+            if(!s.contains(c2[j]))
+            {
+                s.add(c2[j]);
+            }
+            else if(!p.contains(c2[j]))
+            {
+                   p.add(c2[j]);
+            }
+            j++;
+        }
+     }
+    // System.out.print(s);
+      // System.out.print(p);
+        for(int k=0;k<p.size();k++)
+           s.remove(p.get(k));
+    String t[]=new String[s.size()];
+      for(int k=0;k<s.size();k++)
+           t[k]=s.get(k);
+    return t;
+
+    }
+
+}
