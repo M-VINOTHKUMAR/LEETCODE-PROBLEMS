@@ -1,0 +1,41 @@
+class Solution {
+    
+    public int getLucky(String s, int k) {
+        ArrayList<Character> a=new ArrayList<>();
+        for(int i=1;i<27;i++)
+           a.add((char)(i+96));
+            //System.out.print(a+" ");
+           int r=0,sum=0;
+        for(int i=0;i<s.length();i++)
+        {
+            int j=a.indexOf(s.charAt(i))+1;
+           // System.out.print(j+" ");
+            if(j>9)
+            {
+                r=0;
+                while(j!=0)
+                {
+                    r+=j%10;
+                    j/=10;
+                }
+                sum+=r;
+               
+            }
+            else{
+              sum+=j;
+            }
+        }
+        int h=1;
+        while(h!=k)
+        {
+            int res=sum;
+            sum=0;
+            while(res!=0)
+            {
+                sum+=res%10; res/=10;
+            }
+            h++;
+        }
+           return sum;
+    }
+}
