@@ -1,0 +1,28 @@
+class Solution {
+    public boolean isFascinating(int n) {
+        String t="123456789";
+        String n1=String.valueOf(2*n);
+        String n2=String.valueOf(3*n);
+        n2+=n1+n;
+       //System.out.print(n2);
+       String j="";
+          for(int i=0;i<t.length();i++)
+          {
+            String h=String.valueOf(t.charAt(i));
+             if(!n2.contains(h))
+             {
+                return false;
+             }
+          }
+          for(int i=0;i<n2.length();i++)
+          {
+            String h=String.valueOf(n2.charAt(i)); 
+             if(j.contains(h))
+             {
+                  return false;
+             }
+             j+=h;
+          }
+        return true;
+    }
+}
