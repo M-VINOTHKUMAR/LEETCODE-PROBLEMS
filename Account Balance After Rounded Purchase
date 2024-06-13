@@ -1,0 +1,14 @@
+class Solution {
+    public int accountBalanceAfterPurchase(int purchaseAmount) {
+            int r=purchaseAmount%10;
+            int ans=100-purchaseAmount;
+            if(ans%10<=5)
+            {
+                ans-=ans%10;
+            }
+            else{
+                ans+=10-ans%10;
+            }
+            return ans;
+    }
+}
