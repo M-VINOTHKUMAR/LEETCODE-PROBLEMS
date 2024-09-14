@@ -27,9 +27,15 @@ class RandomizedSet {
     }
     
     public int getRandom() {
-        for(int f:m)
-        return f;
-        return 0;
+       int size = m.size();
+int item = new Random().nextInt(size); // In real life, the Random object should be rather more shared than this
+int i = 0;
+for(int p : m)
+{
+    if (i == item)
+        return p;
+    i++;
+}return 0;
     }
 }
 
