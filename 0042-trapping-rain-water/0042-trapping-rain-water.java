@@ -17,7 +17,7 @@ class Solution {
             right--;
             rightMax=Math.max(rightMax,height[right]);
             water+=rightMax-height[right];
-         }
+         }System.out.println(water);
       }
       return water;
       
