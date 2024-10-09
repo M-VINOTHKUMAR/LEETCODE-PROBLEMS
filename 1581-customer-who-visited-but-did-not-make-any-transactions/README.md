@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions">1581. Customer Who Visited but Did Not Make Any Transactions</a></h2><h3>Easy</h3><hr><p>Table: <code>Visits</code></p>
+<h2><a href="https://leetcode.com/problems/customer-who-visited-but-did-not-make-any-transactions/?envType=study-plan-v2&envId=top-sql-50">1581. Customer Who Visited but Did Not Make Any Transactions</a></h2><h3>Easy</h3><hr><p>Table: <code>Visits</code></p>
 
 <pre>
 +-------------+---------+
