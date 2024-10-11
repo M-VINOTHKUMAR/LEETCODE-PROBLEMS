@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/average-time-of-process-per-machine">1661. Average Time of Process per Machine</a></h2><h3>Easy</h3><hr><p>Table: <code>Activity</code></p>
+<h2><a href="https://leetcode.com/problems/average-time-of-process-per-machine/description/?envType=study-plan-v2&envId=top-sql-50">1661. Average Time of Process per Machine</a></h2><h3>Easy</h3><hr><p>Table: <code>Activity</code></p>
 
 <pre>
 +----------------+---------+
