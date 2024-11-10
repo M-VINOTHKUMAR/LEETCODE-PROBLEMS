@@ -1,10 +1,9 @@
 class Solution {
-    public boolean rec(String s1,String s2,String s3,
-    int i,int j, int k)
+    public boolean rec(String s1,String s2,String s3,int i,int j, int k)
     {
         if(k==-1 && i==-1 && j==-1)
            return true;
-           if(k==-1)
+        if(k==-1)
             return false;
         if(i!=-1 && j!=-1 && s1.charAt(i)==s2.charAt(j) && s1.charAt(i)==s3.charAt(k))
         {
