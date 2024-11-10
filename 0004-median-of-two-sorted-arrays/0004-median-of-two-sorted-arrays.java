@@ -37,7 +37,7 @@ class Solution {
          }
          if(l1%2==1)
             return (double) v1;
-            System.out.println(v1+" "+v2);
+           // System.out.println(v1+" "+v2);
           return ((double)v1+(double)v2)/2;
 }
 }
