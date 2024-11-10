@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/word-pattern/?envType=study-plan-v2&envId=top-interview-150">290. Word Pattern</a></h2><h3>Easy</h3><hr><p>Given a <code>pattern</code> and a string <code>s</code>, find if <code>s</code>&nbsp;follows the same pattern.</p>
+<h2><a href="https://leetcode.com/problems/word-pattern">290. Word Pattern</a></h2><h3>Easy</h3><hr><p>Given a <code>pattern</code> and a string <code>s</code>, find if <code>s</code>&nbsp;follows the same pattern.</p>
 
 <p>Here <b>follow</b> means a full match, such that there is a bijection between a letter in <code>pattern</code> and a <b>non-empty</b> word in <code>s</code>. Specifically:</p>
 
