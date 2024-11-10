@@ -1,18 +1,24 @@
 class Solution {
-    public boolean isIsomorphic(String s, String t) {
-        int slen=s.length(),tlen=t.length();
-        if(slen!=tlen)
-          return false;
-        HashMap<Character,Character> m=new HashMap<>();
-        for(int i=0;i<slen;i++)
-        {
-            char c1=s.charAt(i);
-            char c2=t.charAt(i);
-            if(!m.containsKey(c1))
-              m.put(c1,c2);
-            else if(m.get(c1)!=c2)
+    public boolean isIsomorphic(String s1, String s2) {
+        int l1=s1.length();
+		int l2=s2.length();
+		int a[]=new int[128];
+		int b[]=new int[128];
+		if(l1!=l2)
+		       return false ;
+		  Arrays.fill(a,-1);
+          Arrays.fill(b,-1);
+		for(int i=0;i<l1;i++)
+		{
+            int p1=s1.charAt(i);
+            int p2=s2.charAt(i);
+            if(a[p1]!=-1 && a[p1]!=p2)
               return false;
-        }
-        return true;
+            else if(b[p2]!=-1 && b[p2]!=p1)
+              return false;
+            a[p1]=p2;
+            b[p2]=p1;
+		}
+		 return true;
     }
 }
