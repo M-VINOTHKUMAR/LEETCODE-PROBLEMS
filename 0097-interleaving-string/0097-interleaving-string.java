@@ -5,17 +5,13 @@ class Solution {
            return true;
         if(k==-1)
             return false;
-        if(i!=-1 && j!=-1 && s1.charAt(i)==s2.charAt(j) && s1.charAt(i)==s3.charAt(k))
-        {
-           if(rec(s1,s2,s3,i-1,j,k-1) || rec(s1,s2,s3,i,j-1,k-1))
-            return true;
-        }
-        else if(i!=-1 && s1.charAt(i)==s3.charAt(k))
+        
+         if(i!=-1 && s1.charAt(i)==s3.charAt(k))
         {
            if( rec(s1,s2,s3,i-1,j,k-1))
             return true;
         }
-        else if(j!=-1 && s2.charAt(j)==s3.charAt(k))
+        if(j!=-1 && s2.charAt(j)==s3.charAt(k))
         {
             if(rec(s1,s2,s3,i,j-1,k-1))
              return true;
