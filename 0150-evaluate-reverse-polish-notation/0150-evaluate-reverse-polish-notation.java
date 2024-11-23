@@ -12,26 +12,34 @@ class Solution {
             catch(Exception e)
             {
                 String v=tokens[i];
-                if(v.equals("+"))
+                switch(tokens[i])
+                {
+                case "+":
                 {
                     s.push(s.pop()+s.pop());
+                    break;
                 }
-                else if(v.equals("-"))
+                case "-":
                 {
                     s.push(-1*(s.pop()-s.pop()));
+                    break;
                 }
-                 else if(v.equals("*"))
+                case "*":
                 {
                     s.push((s.pop()*s.pop()));
-                } else if(v.equals("/"))
+                    break;
+                }
+                default :
                 {
                     int f=s.pop();
                     int l=s.pop();
                     s.push(l/f);
                 }
+                }
+                }
             }
-        }
-        System.out.println(s);
+        
+     //  System.out.println(s);
         return s.pop();
     }
 }
