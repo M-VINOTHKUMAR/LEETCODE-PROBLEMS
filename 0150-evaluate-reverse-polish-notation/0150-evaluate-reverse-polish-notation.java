@@ -1,18 +1,18 @@
 class Solution {
     public int evalRPN(String[] tokens) {
         Stack<Integer> s=new Stack<>();
-        for(int i=0;i<tokens.length;i++)
+        for(String v:tokens)
         {
            
             try
             {
-                int val=Integer.parseInt(tokens[i]);
+                int val=Integer.parseInt(v);
                 s.push(val);
             }
             catch(Exception e)
             {
-                String v=tokens[i];
-                switch(tokens[i])
+                
+                switch(v)
                 {
                 case "+":
                 {
