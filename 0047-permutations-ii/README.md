@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/permutations-ii/?source=submission-ac">47. Permutations II</a></h2><h3>Medium</h3><hr><p>Given a collection of numbers, <code>nums</code>,&nbsp;that might contain duplicates, return <em>all possible unique permutations <strong>in any order</strong>.</em></p>
+<h2><a href="https://leetcode.com/problems/permutations-ii/description/?envType=problem-list-v2&envId=array">47. Permutations II</a></h2><h3>Medium</h3><hr><p>Given a collection of numbers, <code>nums</code>,&nbsp;that might contain duplicates, return <em>all possible unique permutations <strong>in any order</strong>.</em></p>
 
 <p>&nbsp;</p>
 <p><strong class="example">Example 1:</strong></p>
