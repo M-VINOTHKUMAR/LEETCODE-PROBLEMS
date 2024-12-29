@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/patients-with-a-condition">1527. Patients With a Condition</a></h2><h3>Easy</h3><hr><p>Table: <code>Patients</code></p>
+<h2><a href="https://leetcode.com/problems/patients-with-a-condition/?envType=study-plan-v2&envId=top-sql-50">1527. Patients With a Condition</a></h2><h3>Easy</h3><hr><p>Table: <code>Patients</code></p>
 
 <pre>
 +--------------+---------+
