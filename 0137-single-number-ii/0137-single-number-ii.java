@@ -1,14 +1,13 @@
 class Solution {
     public int singleNumber(int[] nums) {
-        Arrays.sort(nums);
-        int n=nums.length;
-        for(int i=0;i<n-1;i++)
+        int ones=0;
+        int twos=0;
+        for(int a:nums)
         {
-            if(i==0 && nums[i+1]!=nums[i])
-            return nums[i];
-           else if(i!=0 && nums[i-1]!=nums[i] && nums[i+1]!=nums[i])
-              return nums[i];
+            ones^=a&~twos;
+            twos^=a&~ones;
+            System.out.println(Integer.toBinaryString(ones)+" "+Integer.toBinaryString(twos));
         }
-        return nums[n-1];
+        return ones;
     }
 }
