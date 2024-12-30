@@ -1,4 +1,4 @@
-<h2><a href="https://leetcode.com/problems/minimum-moves-to-convert-string">2027. Minimum Moves to Convert String</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of <code>n</code> characters which are either <code>&#39;X&#39;</code> or <code>&#39;O&#39;</code>.</p>
+<h2><a href="https://leetcode.com/problems/minimum-moves-to-convert-string/">2027. Minimum Moves to Convert String</a></h2><h3>Easy</h3><hr><p>You are given a string <code>s</code> consisting of <code>n</code> characters which are either <code>&#39;X&#39;</code> or <code>&#39;O&#39;</code>.</p>
 
 <p>A <strong>move</strong> is defined as selecting <strong>three</strong> <strong>consecutive characters</strong> of <code>s</code> and converting them to <code>&#39;O&#39;</code>. Note that if a move is applied to the character <code>&#39;O&#39;</code>, it will stay the <strong>same</strong>.</p>
 
