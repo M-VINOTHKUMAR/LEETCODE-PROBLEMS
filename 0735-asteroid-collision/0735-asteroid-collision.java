@@ -8,19 +8,19 @@ class Solution {
             while (!s.isEmpty() && s.peek() > 0 && asteroid < 0) {
                 int top = s.peek();
                 if (top == -asteroid) {
-                    s.pop();  // Both asteroids destroy each other
+                    s.pop();  
                     destroyed = true;
                     break;
                 } else if (top > -asteroid) {
-                    destroyed = true;  // Current asteroid is destroyed
+                    destroyed = true; 
                     break;
                 } else {
-                    s.pop();  // Top asteroid is destroyed
+                    s.pop();  
                 }
             }
             
             if (!destroyed) {
-                s.push(asteroid);  // Only push if not destroyed
+                s.push(asteroid);  
             }
         }
         
