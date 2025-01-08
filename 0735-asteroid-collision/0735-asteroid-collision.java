@@ -1,52 +1,34 @@
 class Solution {
     public int[] asteroidCollision(int[] a) {
-    int n=a.length;
-    Stack<Integer> s=new Stack<>();
-    int i=0;
-    while(i<n && a[i]<0)
-    {
-          s.push(a[i++]);
-    }
-    boolean b=false;
-     while(i<n)
-     {
-        System.out.println(s);
-        while(!s.isEmpty() && s.peek()>0 && a[i]<0)
-        {
-            if((a[i]*-1)>s.peek())
-            {
-              s.pop();
-            }
-            else if((a[i]*-1)<=s.peek())
-            {
-                if((a[i]*-1)==s.peek())
-                {
-                s.pop();
+        Stack<Integer> s = new Stack<>();
+        
+        for (int asteroid : a) {
+            boolean destroyed = false;
+            
+            while (!s.isEmpty() && s.peek() > 0 && asteroid < 0) {
+                int top = s.peek();
+                if (top == -asteroid) {
+                    s.pop();  // Both asteroids destroy each other
+                    destroyed = true;
+                    break;
+                } else if (top > -asteroid) {
+                    destroyed = true;  // Current asteroid is destroyed
+                    break;
+                } else {
+                    s.pop();  // Top asteroid is destroyed
                 }
-                b=true;
-               break;
+            }
+            
+            if (!destroyed) {
+                s.push(asteroid);  // Only push if not destroyed
             }
         }
-            s.push(a[i]);
-            if(b)
-             s.pop();
-        System.out.println(s);
-        i++;
-     }
-     i=0;
-     int res[]=new int[s.size()];
-     while(!s.isEmpty())
-     {
-        res[i++]=s.pop();
-     }
-     int j=res.length-1;
-     i=0;
-     while(i<j)
-     {
-        int t=res[i];
-        res[i++]=res[j];
-        res[j--]=t;
-     }
-     return res;
+        
+        int[] result = new int[s.size()];
+        for (int i = result.length - 1; i >= 0; i--) {
+            result[i] = s.pop();
+        }
+        
+        return result;
     }
 }
